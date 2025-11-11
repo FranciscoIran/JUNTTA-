@@ -1,0 +1,38 @@
+/* Importação e Estilos Globais */
+
+
+@import url('variaveis.css');
+
+@import url('base/_reset.css');
+@import url('base/_typography.css');
+
+@import url('componentes/_atoms.css');      /* Contém: input-field, button */
+@import url('componentes/_molecules.css');  /* Contém: input-group, select-field */
+@import url('componentes/_organisms.css');  /* Contém: register-section */
+
+/* Utilitários (Ex: classes de margin/padding) */
+@import url('utilitarios/_helpers.css'); 
+
+body {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-base);
+    color: var(--color-text-dark);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: var(--spacing-lg);
+    background-color: var(--color-background);
+}
+
+/* Breakpoints para Responsividade (Layout Geral) */
+@media (min-width: 768px) {
+    body {
+        padding: var(--spacing-xl) 10%;
+    }
+}
+@media (min-width: 1024px) {
+    body {
+        padding: var(--spacing-xl) 20%;
+    }
+}

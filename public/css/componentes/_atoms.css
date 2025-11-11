@@ -1,0 +1,45 @@
+/*  Elementos Básicos */
+
+/* Input de Formulário (.input-field) */
+.input-field {
+    width: 100%;
+    padding: var(--spacing-md);
+    font-size: var(--font-size-base);
+    background-color: var(--color-input-bg);
+    border: none;
+    border-radius: var(--radius-lg);
+    outline: none;
+    color: var(--color-text-dark);
+    font-weight: var(--font-weight-medium);
+}
+
+.input-field::placeholder {
+    color: rgba(51, 51, 51, 0.6);
+}
+
+.input-field:focus {
+    box-shadow: 0 0 0 2px var(--color-primary);
+}
+
+/* Botão (.button) */
+.button {
+    width: 100%;
+    padding: var(--spacing-md) var(--spacing-lg);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-light);
+    background-color: var(--color-primary);
+    border: none;
+    border-radius: 999px; /* Borda "pill" */
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    text-align: center;
+}
+
+.button:hover {
+    background-color: var(--color-secondary);
+}
+
+.button:active {
+    transform: scale(0.99);
+}

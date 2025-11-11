@@ -1,0 +1,127 @@
+/* Blocos Simples */
+
+/* Container de Input Duplo (.input-group) */
+.input-group {
+    display: flex;
+    flex-direction: column; /* Mobile First: empilha os campos */
+    gap: var(--spacing-lg); /* Espaço entre elementos dentro do grupo */
+}
+
+/* Modificador para Inputs Lado a Lado (apenas no Tablet/Desktop) */
+@media (min-width: 768px) {
+    .input-group--side-by-side {
+        flex-direction: row;
+    }
+    .input-group--side-by-side .input-field {
+        width: 50%;
+    }
+}
+
+
+/* Select Field (.select-field) */
+.select-field {
+    position: relative;
+    width: 100%;
+}
+
+.select-field__select {
+    /* Reutiliza estilo do input-field para aparência */
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: var(--color-input-bg);
+    padding: var(--spacing-md);
+    width: 100%;
+    font-size: var(--font-size-base);
+    border: none;
+    border-radius: var(--radius-lg);
+    outline: none;
+    cursor: pointer;
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-dark);
+    /* Garante que o texto não fique debaixo da seta customizada */
+    padding-right: var(--spacing-xl); 
+}
+
+/* Ícone de seta customizado para o Select (Dropdown) */
+.select-field::after {
+    content: '⌵'; /* Seta simples */
+    position: absolute;
+    top: 50%;
+    right: var(--spacing-md);
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: var(--color-text-dark);
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+/* ==================================================================================================*/
+
+/* Nova Molécula: Cartão de Evento Compacto (Horizontal) */
+.compact-event-card {
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-md) 0;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.2s;
+}
+
+.compact-event-card:last-child {
+    border-bottom: none; /* Remove a borda do último item */
+}
+
+.compact-event-card:hover {
+    background-color: #f9f9f9;
+}
+
+.compact-event-card__image-container {
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0; /* Impede que a imagem encolha */
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    margin-right: var(--spacing-md);
+}
+
+.compact-event-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.compact-event-card__details {
+    flex-grow: 1;
+}
+
+.compact-event-card__title {
+    font-size: 1rem;
+    font-weight: var(--font-weight-bold);
+    margin: 0;
+    color: var(--color-text-dark);
+}
+
+.compact-event-card__info {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 2px;
+}
+
+/* BEM: Estilos para as Estrelas (Reutilizando a ideia de rating) */
+.rating-stars {
+    color: #FFC107; /* Amarelo das estrelas */
+    font-size: 1rem;
+    margin-bottom: var(--spacing-xs);
+}
+
+/* BEM: Container da Ação (Coração) */
+.compact-event-card__action {
+    flex-shrink: 0;
+    padding-left: var(--spacing-md);
+}
+
+.compact-event-card__heart {
+    font-size: 1.5rem;
+    color: #bbb; /* Cor cinza do coração vazio */
+    cursor: pointer;
+    /* Usar um ícone de fonte ou SVG real aqui (ex: '♡') */
+}
